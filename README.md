@@ -8,8 +8,7 @@ Based on these tutorials:
 
 ## Assumptions
 
-* APP_NAME=
-* GCP_PROJECT=
+* SERVICE_NAME=react-gcp-app
 * secrets.GCR_PROJECT
 * secrets.GCR_SA_KEY 
 
@@ -18,7 +17,7 @@ Based on these tutorials:
 ```
 gcloud init
 gcloud auth configure-docker
-docker push gcr.io/test-react-gcp/react-app
+docker push gcr.io/[secrets.$GCR_PROJECT]/[$SERVICE_NAME]
 
 ```
 
