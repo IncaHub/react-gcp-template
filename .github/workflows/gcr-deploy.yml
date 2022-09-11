@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: build
-          path: build
+          path: react-app/build
 
   deploy-gcr:
     name: Deploy to GCR
@@ -56,7 +56,7 @@ jobs:
     defaults:
       run:
         working-directory: ./react-app
-        
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@main
@@ -65,7 +65,7 @@ jobs:
         uses: actions/download-artifact@main
         with:
           name: build
-          path: build
+          path: react-app/build
 
       - name: Setup GCloud Auth
         id: auth
